@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  datacenter: trmap
+  environment: product
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://root:booszy@localhost:8761/eureka
+    register-with-eureka: false
+    fetch-registry: false
+#  server:
+#    enable-self-preservation: true #生成环境关闭
+#    eviction-interval-timer-in-ms: 60000 #同上
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: booszy

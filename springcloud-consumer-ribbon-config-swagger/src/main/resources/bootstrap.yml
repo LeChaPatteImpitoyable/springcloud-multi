@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: springcloud-consumer-config
+  zipkin:
+    base-url: http://localhost:9411
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: springcloud-config-server
+      fail-fast: true
+      username: root
+      password: booszy
+      profile: csdn
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://root:booszy@172.17.0.1:8761/eureka
+      defaultZone: http://root:booszy@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    appname: springcloud-consumer-config

@@ -1,0 +1,8 @@
+include 'springcloud-eureka-server',
+		'springcloud-config-server',
+		'springcloud-zuul',
+		'springcloud-provider-config',
+		'springcloud-hystrix-turbine-dashboard',
+		'springcloud-consumer-ribbon-config-swagger',
+		'springcloud-consumer-feign-config-swagger',
+		'springcloud-zipkin-server'

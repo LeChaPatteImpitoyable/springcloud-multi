@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+configurations {
+	providedRuntime
+}
+
+jar {
+	manifest {attributes 'Main-Class': 'com.yasaka.stock.SCProviderApplication'}
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("com.alibaba:druid-spring-boot-starter:1.1.2")
+
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.3.4.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-actuator', version: '1.5.6.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '1.3.2.RELEASE'
+
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-sleuth', version: '1.3.1.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-sleuth-zipkin', version: '1.3.1.RELEASE'
+
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.38'
+	runtime('mysql:mysql-connector-java')
+}

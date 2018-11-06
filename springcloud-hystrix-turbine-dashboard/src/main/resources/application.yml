@@ -1,0 +1,21 @@
+server:
+                                         port: 8900
+                                       eureka:
+                                         client:
+                                           healthcheck:
+                                             enabled: true
+                                           service-url:
+                                       #      defaultZone: http://root:booszy@172.17.0.1:8761/eureka
+                                             defaultZone: http://root:booszy@localhost:8761/eureka
+                                         instance:
+                                           prefer-ip-address: true
+                                           instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+                                           appname: springcloud-turbine-dashboard
+                                       turbine:
+                                         aggregator:
+                                           clusterConfig: default
+                                         appConfig: springcloud-consumer-config,springcloud-provider-config
+                                         clusterNameExpression: "'default'"
+                                       spring:
+                                         application:
+                                           name: springcloud-turbine-dashboard
