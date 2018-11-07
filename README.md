@@ -28,12 +28,31 @@ Spring Cloud 实战
 ### 4.服务消费者
 
 >springcloud-consumer-feign-config-swagger <br>
->springcloud-consumer-ribbon-config-swagger
+>springcloud-consumer-ribbon-config-swagger <br>
 
-请求访问地址：
+>>请求访问地址：
     
     http://localhost:8201/user/list
     http://localhost:8201/swagger-ui.html
+    http://localhost:8200/user/list
+    http://localhost:8200/swagger-ui.html
 
 ### 5.负载均衡
 >springcloud-zuul
+
+    http://localhost:8400/consumer/user/list
+    http://localhost:8400/consumer/swagger-ui.html
+
+### 6.集群监控
+>springcloud-hystrix-turbine-dashboard
+
+    http://localhost:8900/hystrix.stream
+    在输入框中输入：http://localhost:8900/turbine.stream
+    点击：monitor stream
+    访问：http://localhost:8200/user/list（多点几下）
+
+### 7.链路追踪服务
+>springcloud-zipkin-server
+
+    http://localhost:9411
+    
